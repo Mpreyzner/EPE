@@ -15,7 +15,6 @@ class Spellchecker
 
         pspell_config_mode($config_dic, $mode);
         $this->dictonary = pspell_new_config($config_dic);
-        //pspell_config_personal($pspell_config, "/tmp/dicts/newdict");
     }
 
     public function getSuggestions(string $string): array
