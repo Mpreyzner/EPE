@@ -1,6 +1,8 @@
-Tested with passwords from https://github.com/danielmiessler/SecLists
+### Tested with passwords from https://github.com/danielmiessler/SecLists
 10_million_password_list_top_1000000.txt:
-- marked as easy
+- marked as easy 934951
+
+Although the script is a bit too agressive at the moment as it marks passwords like qwER43@! and Tr0ub4dour&3 as easy, maybe adding calculating of password entropy will fix that.
 
 # Launch:
 sudo apt-get install libpspell-dev 
