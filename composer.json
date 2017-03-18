@@ -1,0 +1,21 @@
+{
+	"name": "Mpreyzner/easy-password-exterminator",
+    "license": "proprietary",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "require": {
+        "php": "^7.1"
+    }
+}
