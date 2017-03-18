@@ -14,17 +14,17 @@ class Spellchecker
         pspell_config_ignore($config_dic, $ignoreLength);
 
         pspell_config_mode($config_dic, $mode);
-        $this->dictonary = pspell_new_config($config_dic);
+        $this->dictionary = pspell_new_config($config_dic);
     }
 
     public function getSuggestions(string $string): array
     {
-        return pspell_suggest($this->dictonary, $string);
+        return pspell_suggest($this->dictionary, $string);
     }
 
     public function isWord(string $string): bool
     {
-        return pspell_check($this->dictonary, $string);
+        return pspell_check($this->dictionary, $string);
     }
 
     public function didYouMean(string $input): string
