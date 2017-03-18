@@ -3,13 +3,15 @@ namespace EasyPasswordExterminator;
 
 class PasswordValidator
 {
-    protected $pspspell;
+    /** @var Spellchecker  */
+    protected $spellchecker;
 
+    /** @var array  */
     protected $errorMessages = [];
 
     public function __construct(Spellchecker $pspspell)
     {
-        $this->pspspell = $pspspell;
+        $this->spellchecker = $pspspell;
     }
 
     public function isEasy(string $pass): bool
@@ -20,9 +22,9 @@ class PasswordValidator
             return true;
         }
 
-        $minLenght = 6;
-        if (strlen($pass) < $minLenght) {
-            $this->addError("Password is too short. It should be at least {$minLenght} characters.");
+        $minLength = 6;
+        if (strlen($pass) < $minLength) {
+            $this->addError("Password is too short. It should be at least {$minLength} characters.");
             return true;
         }
         if (count(array_unique(str_split($pass))) < 4) {
@@ -30,7 +32,7 @@ class PasswordValidator
             return true;
         }
 
-        if ($this->pspspell->isWord($pass)) {
+        if ($this->spellchecker->isWord($pass)) {
             $this->addError("Password is too easy. It shouldn't be a single word.");
             return true;
         }
@@ -39,7 +41,7 @@ class PasswordValidator
             return true;
         }
 
-        if (!empty($this->pspspell->didYouMean($pass))) {
+        if (!empty($this->spellchecker->didYouMean($pass))) {
             $this->addError("Password is too easy.");
             return true;
         }
@@ -47,12 +49,12 @@ class PasswordValidator
         return false;
     }
 
-    protected function addError(string $error)
+    protected function addError(string $error) : void
     {
         $this->errorMessages[] = $error;
     }
 
-    public function getAllErrors()
+    public function getAllErrors() : string
     {
         $allErrors = implode(' ', $this->errorMessages);
         return $allErrors;

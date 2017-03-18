@@ -5,7 +5,7 @@ class Spellchecker
 {
     /** @var  string 2 characters language code */
     protected $lang;
-
+    
     protected $dictionary;
 
     public function __construct($lang = 'en', $mode = PSPELL_FAST, $ignoreLength = 3)
