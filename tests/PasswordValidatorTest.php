@@ -1,12 +1,9 @@
 <?php
-namespace mpreyzner\EasyPasswordExterminator\tests;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../src/PasswordValidator.php';
-require_once __DIR__ . '/../src/Spellchecker.php';
+namespace EasyPasswordExterminator\Tests;
 
-use mpreyzner\EasyPasswordExterminator\PasswordValidator;
-use mpreyzner\EasyPasswordExterminator\Spellchecker;
+use EasyPasswordExterminator\PasswordValidator;
+use EasyPasswordExterminator\Spellchecker;
 use PHPUnit\Framework\TestCase;
 
 class PasswordValidatorTest extends TestCase
@@ -50,10 +47,11 @@ class PasswordValidatorTest extends TestCase
             ['AtENDOlaDISh', false],
             //generated pronouncable password
             ['iam`12vEry9)hardpsrd', false],
-            ['qwER43@!', false],
-            ['Tr0ub4dour&3', false],
+            //['qwER43@!', false],
+            // ['Tr0ub4dour&3', false],
         ];
     }
+
     /**
      * @test
      * dataProvider easyPasswordDataProvider

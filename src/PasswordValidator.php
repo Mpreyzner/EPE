@@ -1,5 +1,5 @@
 <?php
-namespace mpreyzner\EasyPasswordExterminator;
+namespace EasyPasswordExterminator;
 
 class PasswordValidator
 {

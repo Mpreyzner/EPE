@@ -1,15 +1,14 @@
 <?php
-namespace mpreyzner\EasyPasswordExterminator\tests;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../src/Spellchecker.php';
+namespace EasyPasswordExterminator\Tests;
 
-use mpreyzner\EasyPasswordExterminator\Spellchecker;
+use EasyPasswordExterminator\Spellchecker;
 use PHPUnit\Framework\TestCase;
 
 class SpellcheckerTest extends TestCase
 {
     protected $spellChecker;
+
     /**
      * @test
      */
